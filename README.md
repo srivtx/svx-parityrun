@@ -81,22 +81,25 @@ does not exist.**
 
 ## Verification status and build gates
 
-The gap was **OPEN at medium-high confidence** as of 2026-09-30 (V1).
-Two conditions attach — both are mandatory gates, not advice:
-
-1. **Verify the AWS Marketplace listing "Rhino Agentic Mainframe
-   Modernization"** (Mechanical Orchard's Imogen — COBOL/PL/I/JCL/
-   Assembler/CICS/IMS → Amazon EKS; aws.amazon.com, undated,
-   single-source). If it is a software SKU, the wedge shifts from
-   "the harness does not exist" to "vendor-neutral, works-with-any-
-   engine" — re-assess before building.
-2. Re-run the core kill-search once before ship ("mainframe migration
-   equivalence testing tool 2026") — the "parallel run" phrasing was
-   structurally unsearchable on our service (6+ consecutive noise
-   failures across passes), so absence-of-product rests on 7 phrasings,
-   which is strong but not airtight.
+The gap was **OPEN at medium-high confidence** as of 2026-09-30 (V1),
+and **re-verified OPEN-but-narrowed on 2026-10-04** (Goal 0 resolved —
+see [`docs/gate-log.md`](docs/gate-log.md)): Mechanical Orchard's
+"Imogen" is now on AWS Marketplace as a **private-offer SaaS with the
+testing harness embedded** (plus Thoughtworks and Perficient partner
+listings) — market-validating the concept while confirming the unowned
+slice is exactly the vendor-neutral one: **engine-agnostic, SI-owned,
+any-target** capture→replay→deterministic-compare, which Imogen
+structurally cannot serve ("your code never leaves an MO-controlled
+cloud instance"). The VSAM/DB2 reconciliation slice (Goal 3) was
+killed as a standalone by research track V4 (Arbutus Analyzer,
+DataChecks.io) and survives only on four axes — automated,
+statistical-bounds, CI-integrated, vendor-neutral. The pre-ship
+kill-search refresh remains in force ("mainframe migration equivalence
+testing tool", dated at ship time — the "parallel run" phrasing was
+structurally unsearchable across R8/R13b/V1).
 
 Full evidence: [V1 report](https://github.com/srivtx/svx-research/blob/main/research/track-reports/V1-row13-harness-killsearch.md),
+[V4 report](https://github.com/srivtx/svx-research/blob/main/research/track-reports/V4-ai-infra-followups.md),
 [R8 report](https://github.com/srivtx/svx-research/blob/main/research/track-reports/R8-gov-cobol-modernization.md),
 [registry row 13](https://github.com/srivtx/svx-research/blob/main/docs/gap-registry.md).
 

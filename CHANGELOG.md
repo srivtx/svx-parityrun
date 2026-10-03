@@ -7,6 +7,17 @@ AGENT-GOALS.md standing constraints.
 
 ## [Unreleased]
 
+### Changed
+- Goal 0 resolved (2026-10-04): the Imogen AWS Marketplace question —
+  listing confirmed as private-offer SaaS with the harness embedded
+  (plus Thoughtworks/Perficient partner listings); wedge re-framed to
+  the engine-agnostic, SI-owned, any-target slices. See
+  `docs/gate-log.md`. No version bump (docs).
+- Goal 3 re-framed (2026-10-04): standalone reconciliation premise
+  killed by research track V4 (Arbutus Analyzer, DataChecks.io); the
+  slice survives only on four axes — automated, statistical-bounds,
+  CI-integrated, vendor-neutral. No version bump (docs).
+
 ## [0.0.1] — 2026-09-30
 
 ### Added

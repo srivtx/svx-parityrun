@@ -42,7 +42,21 @@ a `CHANGELOG.md` entry under `[Unreleased]`, and move the goal to the
 
 ---
 
-## Goal 0 — Build gates (MUST run before any code)
+## Goal 0 — Build gates (RESOLVED 2026-10-04 — see `docs/gate-log.md`)
+
+**Outcome: gate 1 partially fired; the row stays OPEN, narrowed.**
+Mechanical Orchard's "Imogen by Mechanical Orchard" is now on AWS
+Marketplace as a **private-offer SaaS** (harness embedded,
+byte-for-byte-equivalence language, Thoughtworks and Perficient
+partner listings alongside) — but it is not vendor-neutral, not
+engine-agnostic, and not separable, and MO's own funnel keeps code in
+MO-controlled environments. **Goal 1 proceeds on the re-framed wedge:
+the engine-agnostic, SI-owned, any-target slices Imogen structurally
+cannot serve.** Full evidence and the re-frame rationale:
+[`docs/gate-log.md`](docs/gate-log.md). The pre-ship kill-search
+refresh (original §2 below) remains in force.
+
+**Original work order (kept for the record):**
 
 **Why this goal exists.** The gap was verified OPEN at medium-high
 confidence on 2026-09-30, not high — two threads were left open, and
@@ -187,23 +201,20 @@ evidence case in the README; version 0.2.0 once, with the batch.
 
 ---
 
-## Goal 3 — Data-reconciliation slice (GATED — do not start before its own kill-pass)
+## Goal 3 — Data-reconciliation slice (GATED — standalone premise killed by V4, 2026-10-04)
 
-**Why gated:** the VSAM/DB2/IMS data-migration reconciliation slice is
-STILL-UNVERIFIED after two thin passes (R8 q23b/q24/q24b noise; V1 §10
-found adjacent solvers only — Precisely Connect is replication, not
-compare). Strong failure evidence ("80% of core-banking migrations fail
-on incomplete or incorrect data") but no dedicated product landscape.
-
-**Work order (gate first):** run 4-6 targeted searches with fresh
-phrasings (`data migration reconciliation tool mainframe`, `dataset
-compare tool z/OS migration`, `Db2 VSAM parity validation`), read the
-nearest vendors' product pages directly (Precisely, IBM IMS/Db2 tooling,
-Broadcom), and write the verdict into `docs/gate-log.md`. Only if
-CONFIRMED-OPEN: extend `compare` with dataset-level reconciliation
-(row counts, key-set diffs, field-level sampling with statistical
-bounds — evalgate's interval machinery is the reference), as version
-0.3.0.
+**Gate outcome (research track V4):** the *standalone* reconciliation
+product exists — **Arbutus Analyzer** (reads native DB2/IMS/ADABAS/
+VSAM/ISAM; "RECONCILE THE MIGRATION" decommissioning whitepaper) and
+**DataChecks.io** (agent-driven output-parity validation, cloud-DW
+scope) — and Next Pathway/AWS embed validation platform-locked.
+**The slice as originally drafted is closed.** It survives only if
+parityrun's version is all four of: **automated** (Arbutus is
+analyst-driven), **statistical-bounds** (sampling with confidence
+levels, evalgate's interval machinery), **CI-integrated** (a gate, not
+a report), and **vendor-neutral** (any source/target pair). If a
+future agent opens this goal, the work order is the four-axes
+re-frame + its own kill-pass on those axes first, as version 0.3.0.
 
 ---
 
@@ -223,8 +234,9 @@ bounds — evalgate's interval machinery is the reference), as version
 
 ## Re-verify triggers (any of these → re-run Goal 0 before further work)
 
-- Mechanical Orchard announces a tool SKU, partner program, or
-  separately-licensable harness.
+- Mechanical Orchard announces a **tool-only SKU, partner program, or
+  separately-licensable harness** (as of 2026-10-04: private-offer SaaS,
+  harness embedded — see `docs/gate-log.md`).
 - BMC/Broadcom ship migration-equivalence features (cross-system
   compare) in their testing products.
 - Amazon Q Transform / watsonx Z expose standalone validation
